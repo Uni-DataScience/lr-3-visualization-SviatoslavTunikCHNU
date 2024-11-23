@@ -10,9 +10,23 @@ def plot_distribution(data):
     Parameters:
     data (array-like): An array of categorical data items.
     """
-    
-    fig, _ = plt.subplots()
-    pass
+
+    fig, ax = plt.subplots()
+
+    counter = collections.Counter(data)
+
+    category = counter.keys()
+    counts = counter.values()
+    bar_colors = ['tab:red', 'tab:blue', 'tab:orange']
+
+    ax.bar(category, counts, color=bar_colors)
+
+    ax.set_ylabel('категорія')
+    ax.set_xlabel('частота')
+    ax.set_title(str(data))
+
+    plt.savefig("mygraph.png")
+
     return fig
 
 

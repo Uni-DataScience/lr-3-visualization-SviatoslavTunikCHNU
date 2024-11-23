@@ -12,7 +12,15 @@ def create_scatter_plot(data):
     data (DataFrame): A DataFrame containing 'x' and 'y' columns.
     """
     fig, _ = plt.subplots()
-    pass
+
+    sns.set_theme()
+
+    sns.relplot(
+        data=data,
+        x="x", y="y"
+    )
+    plt.savefig("mygraph2.png")
+
     return fig
 
 
